@@ -35,7 +35,8 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <div className="h-[100vh] bg-[#FCF0CA]">
+      <div className="py-[5px] px-[15px]">RSP</div>
       {init ? (
         <BrowserRouter>
           <Routes>
@@ -58,7 +59,7 @@ const App = () => {
       ) : (
         <div>로딩중...</div>
       )}
-    </>
+    </div>
   );
 };
 

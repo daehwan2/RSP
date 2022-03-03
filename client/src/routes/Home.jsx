@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Home({ isLoggedIn, user, logoutHandler }) {
   return (
-    <div className="h-[100vh] bg-[#FCF0CA]">
+    <div className="h-[80%]">
       {isLoggedIn ? (
         <div className="h-[100%] flex justify-center items-center">
           <div className="flex flex-col items-center">
@@ -10,6 +10,7 @@ export default function Home({ isLoggedIn, user, logoutHandler }) {
               <img
                 className="w-[50px] h-[50px] rounded-[50%] mr-[5px]"
                 src={user.photoURL}
+                alt="profileImage"
               />
               <strong className="text-[35px]">{user.displayName}</strong>
             </div>
@@ -17,7 +18,7 @@ export default function Home({ isLoggedIn, user, logoutHandler }) {
 
             <a
               className="bg-[#C3B894] rounded-[12px] text-center p-[30px] text-[40px]"
-              href="">
+              href="/">
               방만들기
             </a>
 
