@@ -44,5 +44,9 @@ export default function RedirectAuth({ setInit }) {
     console.log(code);
     getTokenAndSignIn();
   }, []);
-  return <>로그인중..</>;
+  return (
+    <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-[30px]">
+      로그인중..
+    </div>
+  );
 }

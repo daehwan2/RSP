@@ -11,9 +11,7 @@ const App = () => {
 
   const logoutHandler = () => {
     signOut(authService)
-      .then(() => {
-        alert("로그아웃하였습니다.");
-      })
+      .then(() => {})
       .catch((err) => {
         console.log(err);
       });
@@ -35,8 +33,11 @@ const App = () => {
   }, []);
 
   return (
-    <div className="h-[100vh] bg-[#FCF0CA] main-font">
-      <div className="py-[5px] px-[15px] text-[20px]">RSP</div>
+    <div className="relative h-[100vh] bg-[#FCF0CA] main-font">
+      <div className="flex justify-between py-[5px] px-[15px] text-[20px]">
+        <div>RSP</div>
+        <div>madeBy Daehwan2</div>
+      </div>
       {init ? (
         <BrowserRouter>
           <Routes>
@@ -57,7 +58,9 @@ const App = () => {
           </Routes>
         </BrowserRouter>
       ) : (
-        <div>로딩중...</div>
+        <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-[30px]">
+          로딩중...
+        </div>
       )}
     </div>
   );
