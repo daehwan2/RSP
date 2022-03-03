@@ -35,8 +35,8 @@ const App = () => {
   }, []);
 
   return (
-    <div className="h-[100vh] bg-[#FCF0CA]">
-      <div className="py-[5px] px-[15px]">RSP</div>
+    <div className="h-[100vh] bg-[#FCF0CA] main-font">
+      <div className="py-[5px] px-[15px] text-[20px]">RSP</div>
       {init ? (
         <BrowserRouter>
           <Routes>
