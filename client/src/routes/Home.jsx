@@ -1,6 +1,29 @@
+import { addDoc, collection } from "firebase/firestore";
 import React from "react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { dbService } from "../fbase";
 
-export default function Home({ isLoggedIn, user, logoutHandler }) {
+export default function Home({ isLoggedIn, user, logoutHandler, isGaming }) {
+  const navigate = useNavigate();
+  const makeGameHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const docRef = await addDoc(collection(dbService, "games"), {
+        host: user,
+        guest: null,
+      });
+      console.log("Document written with ID:", docRef.id);
+      navigate(`/games/${docRef.id}`);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+  useEffect(() => {
+    if (isGaming) {
+      alert("로그인 하신 후 다시 공유링크를 클릭해서 접속해주세요");
+    }
+  }, []);
   return (
     <div>
       {isLoggedIn ? (
@@ -14,12 +37,11 @@ export default function Home({ isLoggedIn, user, logoutHandler }) {
               />
               <strong className="text-[35px]">{user.displayName}</strong>
             </div>
-            <div className="text-[24px] mb-[20px] text-center">
-              12승 5패 3무
-            </div>
+            <div className="text-[24px] mb-[20px] text-center">✊✌🖐</div>
 
             <a
               className="bg-[#C3B894] rounded-[12px] text-center p-[30px] text-[40px] whitespace-nowrap"
+              onClick={makeGameHandler}
               href="/">
               방만들기
             </a>

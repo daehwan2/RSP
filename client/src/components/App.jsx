@@ -4,6 +4,7 @@ import { authService } from "../fbase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import Home from "../routes/Home";
 import RedirectAuth from "../routes/RedirectAuth";
+import Game from "../routes/Game";
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [init, setInit] = useState(false);
@@ -24,6 +25,7 @@ const App = () => {
           id: u.uid,
           displayName: u.displayName,
           photoURL: u.photoURL,
+          pick: "",
         });
       } else {
         setIsLoggedIn(false);
@@ -35,7 +37,7 @@ const App = () => {
   return (
     <div className="relative h-[100vh] bg-[#FCF0CA] main-font">
       <div className="flex justify-between py-[5px] px-[15px] text-[20px]">
-        <div>RSP</div>
+        <a href="/">RSP</a>
         <div>madeBy Daehwan2</div>
       </div>
       {init ? (
@@ -51,6 +53,14 @@ const App = () => {
                 />
               }
             />
+            {isLoggedIn ? (
+              <Route path="/games/:game_id" element={<Game user={user} />} />
+            ) : (
+              <Route
+                path="/games/:game_id"
+                element={<Home isGaming={true} />}
+              />
+            )}
             <Route
               path="/redirect"
               element={<RedirectAuth setInit={setInit} />}
