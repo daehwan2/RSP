@@ -33,3 +33,19 @@
 # 🎨디자인 작업
 
 https://www.figma.com/file/TtGr2L1zxuv5NbOhibIwUU/Untitled?node-id=0%3A1
+
+
+# 🏆 결과물 스크린샷 (임시)
+
+![c1](https://user-images.githubusercontent.com/53414542/156763157-558ae94a-a932-4926-bc73-c41ba587994d.PNG)
+![c2](https://user-images.githubusercontent.com/53414542/156763316-eb8225e8-d033-4ac2-99ec-4f9c91d2e049.PNG)
+![c3](https://user-images.githubusercontent.com/53414542/156763869-f5703df0-e0dc-4a51-a791-ca585081048b.PNG)
+![c4](https://user-images.githubusercontent.com/53414542/156763877-4df917b9-b963-4283-add3-e99f9e680218.PNG)
+![c5](https://user-images.githubusercontent.com/53414542/156763881-50bbc0bc-b0cd-45d8-b17e-6f3a4832ba0e.PNG)
+![c6](https://user-images.githubusercontent.com/53414542/156763886-361ad0ce-5cbf-4646-99c2-505505f0735c.PNG)
+
+
+
+# 구현해야할 기능
+
+- 카카오 공유하기, 다시하기
